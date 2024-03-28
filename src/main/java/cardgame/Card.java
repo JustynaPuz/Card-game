@@ -10,10 +10,16 @@ import org.w3c.dom.Attr;
 public class Card {
 
     @Getter
+    private int Id;
+    @Getter
+    private String title;
+    @Getter
     private String description;
     @Getter
     private EnumMap<Attribute, Integer> attributesAccepted;
     @Getter
     private EnumMap<Attribute, Integer> attributesNotAccepted;
+
+
 
 }

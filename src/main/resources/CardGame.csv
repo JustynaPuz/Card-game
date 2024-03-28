@@ -1,0 +1,4 @@
+ID karty;Tytu³ ;Opis;Tak (Jedzenie);TAK handel;TAK wojsko;TAK religia;Nie jedzenie;NIE handel;NIE wojsko;NIE religia
+1;Urodzaj w królestwie jamników;Królestwo Jamników doœwiadcza nieoczekiwanego urodzaju. Zbiory s¹ obfite, a spichlerze pêkaj¹ w szwach. Czy podzielisz siê nadwy¿kami z s¹siednimi królestwami, zwiêkszaj¹c handel, ale ryzykuj¹c zmniejszenie lokalnych zapasów jedzenia?;-10;20;0;0;20;-10;0;0
+2;Festiwal Smakosza Jamnika;W królestwie ma siê odbyæ wielki festiwal kulinariczny, który przyci¹gnie smakoszy z ca³ego œwiata. Czy poœwiêcisz zasoby, aby festiwal siê odby³, wzmacniaj¹c jednoczeœnie kulturê i religiê, ale kosztem zasobów jedzenia?;-20;20;0;10;10;0;0;-10
+3;Wezwanie do Broni;S¹siednie królestwo zagra¿a granicom Królestwa Jamników. Czy zmobilizujesz swoje si³y, by broniæ krainy, kosztem zasobów i potencjalnego handlu?;-10;-20;30;0;0;10;-20;0
