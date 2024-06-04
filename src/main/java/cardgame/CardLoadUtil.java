@@ -1,23 +1,24 @@
 package cardgame;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.List;
-import java.io.FileReader;
-import java.io.IOException;
-import lombok.Getter;
-import java.util.Map;
 
 
 public class CardLoadUtil {
-    static Map<Integer,Card> cards = new HashMap<>();
-    public static void loadCard() {
-        Card card;
-        List<String> records = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/CardGame.csv"))) {
+    public static List<Card> loadCard(String pathCSV) {
+        Card card;
+        List<Card> cards = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                new FileInputStream(pathCSV), StandardCharsets.UTF_8))) {
             String line;
             line = br.readLine();
             while ((line = br.readLine()) != null) {
@@ -34,16 +35,16 @@ public class CardLoadUtil {
                 attributesNotAccepted.put(Attribute.MILITARY, Integer.parseInt(values[9]));
                 attributesNotAccepted.put(Attribute.RELIGION, Integer.parseInt(values[10]));
 
-                card = new Card(Integer.parseInt(values[0]),values[1], values[2], attributesAccepted,attributesNotAccepted );
-            cards.put(card.getId(),card);
+                byte[] image = ImageUtil.loadImage("cardImages/" + values[0] +".png");
+
+                card = new Card(Integer.parseInt(values[0]),values[1], values[2], image, attributesAccepted,attributesNotAccepted );
+            cards.add(card);
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
-
+        return cards;
     }
-
-
 }
 
 
