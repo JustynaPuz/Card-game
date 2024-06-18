@@ -2,6 +2,7 @@ package cardgame;
 
 import java.util.EnumMap;
 import java.util.Random;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -29,7 +30,7 @@ public class Card {
                 int max = attributes.get(attribute) + 7;
                 value = random.nextInt(max - min) + min;
 
-                value = Math.max(-100,Math.min(100, value));
+                value = Math.max(-100, Math.min(100, value));
             } else {
                 value = 0;
                 newAttributes.put(attribute, value);

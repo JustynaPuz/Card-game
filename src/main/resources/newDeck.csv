@@ -1,21 +1,21 @@
 ID karty;Tytuł ;Opis;Tak (Jedzenie);TAK handel;TAK wojsko;TAK religia;Nie jedzenie;NIE handel;NIE wojsko;NIE religia
-1;Turniej Mistrzów Łucznictwa; W krolestwie odbedzie sie wielki turniej, w ktorym najlepsi łucznicy zmierza sie w rywalizacji. ;-10;0;20;0;10;-5;0;-5
+1;Turniej Mistrzów Łucznictwa; W krolestwie odbedzie sie wielki turniej, w ktorym najlepsi łucznicy zmierza sie w rywalizacji. ;-10;0;20;0;10;-5;0;-10
 2;Kurs Samoobrony dla Jamników; Mistrzowie sztuk walki oferują specjalne kursy samoobrony dla jamników, aby pomóc im poczuć się bezpieczniej w królestwie. ;-10;0;10;0;10;-5;0;-10
-3;Wyprawa Ekspedycyjna Jamnika; Jamnik eksplorator proponuje organizację wyprawy na nieodkryty obszar królestwa, co może przynieść nowe zasoby i informacje. ;-10;20;0;0;10;0;0;-5
-4;Konkurs Talentów Jamników; Organizowany jest konkurs talentów, na którym jamniki mogą zaprezentować swoje wyjątkowe umiejętności, przyciągając uwagę mieszkańców królestwa. ;-10;0;0;10;10;0;-5;0
-5;Kampania Edukacyjna Jamników; Jamniki organizują kampanię edukacyjną w królestwie, aby zwiększyć poziom czytelnictwa i edukacji wśród mieszkańców. ;-10;0;0;10;10;0;-5;0
-6;Wizyta Cyrkowych Artystów Jamników; Do królestwa zjechali cyrkowi artyści jamniki, którzy proponują występ akrobacji i żonglerki dla mieszkańców. ;0;10;0;0;-5;0;5;0
+3;Wyprawa Ekspedycyjna Jamnika; Jamnik eksplorator proponuje organizację wyprawy na nieodkryty obszar królestwa, co może przynieść nowe zasoby i informacje. ;-10;20;0;0;10;0;0;-10
+4;Konkurs Talentów Jamników; Organizowany jest konkurs talentów, na którym jamniki mogą zaprezentować swoje wyjątkowe umiejętności, przyciągając uwagę mieszkańców królestwa. ;-10;0;0;10;10;0;-10;0
+5;Kampania Edukacyjna Jamników; Jamniki organizują kampanię edukacyjną w królestwie, aby zwiększyć poziom czytelnictwa i edukacji wśród mieszkańców. ;-10;0;0;10;10;0;-10;0
+6;Wizyta Cyrkowych Artystów Jamników; Do królestwa zjechali cyrkowi artyści jamniki, którzy proponują występ akrobacji i żonglerki dla mieszkańców. ;0;10;0;0;-5;0;10;0
 7;Pomoc Medyczna Jamników; Jamniki lekarze oferują swoje usługi medyczne mieszkańcom królestwa, aby poprawić jakość opieki zdrowotnej. ;-10;0;0;10;10;0;-5;0
 8;Wiosenna Plantacja Kwiatów; Jamniki ogrodnicy zapraszają do udziału w akcji sadzenia kwiatów w całym królestwie, aby uczcić nadejście wiosny. ;-10;0;0;10;10;0;-5;0
-9;Spotkanie Dyplomatyczne z Królestwem Kotów; Jamniki organizują spotkanie dyplomatyczne z Królestwem Kotów w celu podpisania traktatu handlowego.;-5;20;0;0;10;-5;0;0
-10;Uroczysta Ceremonia Maskotki Jamnika; Jamniki proponują wprowadzenie uroczej maskotki królestwa, która będzie reprezentować jedność i radość mieszkańców. ;-10;10;0;0;10;-5;0;0
+9;Spotkanie z Królestwem Kotów; Jamniki organizują spotkanie dyplomatyczne z Królestwem Kotów w celu podpisania traktatu handlowego.;-5;20;0;0;10;-5;0;0
+10;Uroczysta Ceremonia Maskotki Jamnika; Jamniki proponują wprowadzenie uroczej maskotki królestwa, która będzie reprezentować jedność i radość mieszkańców. ;-10;10;0;0;10;-10;0;0
 11;Odnowienie Starych Dróg; Grupa zdolnych inżynierów proponuje przebudowę starych dróg handlowych, co przyczyni się do poprawy handlu w kraju.;0;15;0;0;0;0;10;0
 12;Zloty Turniej Rydwany Jamnikow; Jamniki proponuja organizacje wielkiego turnieju rydwanow, ktory przyciagnie liczne tlumy i podniesie ducha patriotyzmu w krolestwie. ;-10;10;0;10;0;-5;0;0
-13;Nocne Obserwacje Gwiezdnych Jamniczych Konstelacji; Jamniki entuzjaści astronomii proponują nocne sesje obserwacji gwiazd, co może przyczynić się do rozwinięcia wiedzy astronomicznej w królestwie. ;-10;0;0;10;10;0;-5;0
-14;Poszukiwania Zaginionej Skarbnicy; Legenda mówi o zaginionej skarbnicy w głębokich lasach, w której mogą znajdować się cenne artefakty. ;10;0;-10;5;-5;0;0;10
+13;Obserwacje Gwiezdnych Konstelacji; Jamniki entuzjaści astronomii proponują nocne sesje obserwacji gwiazd, co może przyczynić się do rozwinięcia wiedzy astronomicznej w królestwie. ;-10;0;0;10;10;0;-5;0
+14;Poszukiwania Zaginionej Skarbnicy; Legenda mówi o zaginionej skarbnicy w głębokich lasach, w której mogą znajdować się cenne artefakty. ;10;0;-10;5;-10;0;0;10
 15;Przedstawienie Teatralne; Grupa jamniczych aktorów proponuje wystawić wielkie przedstawienie teatralne na dziedzińcu pałacu królewskiego. ;0;0;0;10;0;0;0;5
 16;Wystawa Sztuki Jamników; Jamniczy artysta proponuje organizację wystawy sztuki, na której będą prezentowane ich najnowsze dzieła. ;0;10;0;0;-5;0;0;10
 17;Maskarada Kostiumowa Jamników; Jamniki zebrali się na uroczystą maskaradę, aby popisać się swoimi najbardziej kreatywnymi i oryginalnymi kostiumami. ;0;0;0;0;-10;0;0;10
-18;Szkolenia dla Wojska Jamników; Władca królestwa planuje zorganizować szkolenia dla armii jamników, aby podnieść ich umiejętności bojowe. ;-10;0;20;0;10;-5;0;-5
+18;Szkolenia dla Wojska Jamników; Władca królestwa planuje zorganizować szkolenia dla armii jamników, aby podnieść ich umiejętności bojowe. ;-10;0;20;0;10;-5;0;-10
 19;Rewolucyjny Plan Handlowy; Grupa handlowych jamników proponuje wprowadzenie nowego planu handlowego, który ma zwiększyć dochody z handlu w królestwie. ;-5;20;0;-5;0;0;10;0
 20;Odkrycie Magicznego Portalu; Ekspedycja odkryła magiczny portal, który prowadzi do nieznanych krain pełnych tajemnic i przygód. ;-10;0;0;10;0;0;10;-5

@@ -2,13 +2,13 @@ package cardgame;
 
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
 import static cardgame.CardLoadUtil.loadCard;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CardLoadUtilTest {
     List<Card> cards = loadCard("src/test/java/cardgame/testCSV.csv");
