@@ -147,12 +147,6 @@ public class GUI {
     public void newCard(boolean isAccepted) throws IOException {
         days++;
         Card card = engine.getRandomCard();
-        if (card.getTitle().length() > 25) {
-            Font fontSmallerTitle = new Font("Arial", Font.BOLD, 15);
-            titleField.setFont(fontSmallerTitle);
-        } else {
-            titleField.setFont(fontTitle);
-        }
         titleField.setText(card.getTitle());
         descriptionArea.setText(card.getDescription());
         JLabel scaledImage = ImageUtil.createScaledImage(card.getImage(), 300, 500);
@@ -286,6 +280,7 @@ public class GUI {
         //first card
         Card card = engine.getRandomCard();
 
+
         //card box
         Box cardBox = Box.createHorizontalBox();
         cardBox.add(Box.createHorizontalStrut(40));
@@ -299,7 +294,8 @@ public class GUI {
         }
         cardBox.add(Box.createHorizontalStrut(15));
         titleField.setText(card.getTitle());
-        titleField.setFont(fontTitle);
+        Font fontSmallerTitle = new Font("Arial", Font.BOLD, 15);
+        titleField.setFont(fontSmallerTitle);
         titleField.setMaximumSize(new Dimension(300, 50));
 
         //description box
@@ -346,7 +342,7 @@ public class GUI {
 
     private void createGameOverScreen() throws IOException {
         gameOverScreen.add(Box.createVerticalStrut(25));
-        JLabel gameOverLabel = new JLabel("PRZEGRANA!");
+        JLabel gameOverLabel = new JLabel("KONIEC!");
         gameOverLabel.setFont(font);
         gameOverLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         gameOverScreen.add(gameOverLabel);
@@ -377,7 +373,6 @@ public class GUI {
                 if (!Objects.equals(nameField.getText(), "")) {
                     engine.gameOver(nameField.getText(), days);
                 }
-
                 gameOver();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -400,6 +395,7 @@ public class GUI {
 
         continueButton.addActionListener(e -> {
             gameOver();
+            engine.setDays(0);
             cardLayout.show(panelContainer, "StartScreen");
         });
         buttonsGameOverBox.add(continueButton);

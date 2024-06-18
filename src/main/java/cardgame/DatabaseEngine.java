@@ -23,54 +23,29 @@ public class DatabaseEngine {
 
     public DatabaseEngine() {
         try {
-            // STEP 1: Register JDBC driver
             Class.forName(JDBC_DRIVER);
-
-            //STEP 2: Open a connection
-            System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            //STEP 3: Execute a query
-            System.out.println("Creating table in given database...");
             stmt = conn.createStatement();
-            String sql = "CREATE TABLE  IF NOT EXISTS  CARD " +
-                    "(id INTEGER not NULL, " +
-                    " title VARCHAR(255), " +
-                    " description TEXT, " +
-                    "image BLOB,"+
-                    " foodYes INTEGER, " +
-                    " economyYes INTEGER, " +
-                    " militaryYes INTEGER, " +
-                    " religionYes INTEGER, " +
-                    " foodNo INTEGER, " +
-                    " economyNo INTEGER, " +
-                    " militaryNo INTEGER, " +
-                    " religionNo INTEGER, " +
-                    " PRIMARY KEY ( id ))";
+            String sql = SQLCommands.createTableCard;
             stmt.executeUpdate(sql);
-            sql = "CREATE TABLE IF NOT EXISTS TOPSCORE" +
-                    "(name VARCHAR(50)," +
-                    "score INTEGER)";
+            sql = SQLCommands.createTableTopScore;
             stmt.executeUpdate(sql);
-            System.out.println("Created table in given database...");
-
         } catch (SQLException se) {
             //Handle errors for JDBC
             se.printStackTrace();
+            System.exit(-1);
         } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
         }
     }
-
     public void closeDatabase() throws SQLException {
         stmt.close();
         conn.close();
     }
-
     public void insertCards(List<Card> cards) {
         try {
-            String sql = "INSERT INTO CARD (id, title, description, image, foodYes, economyYes, militaryYes, religionYes, foodNo, economyNo, militaryNo, religionNo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = SQLCommands.insertCard;
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             for (Card card : cards) {
@@ -80,7 +55,7 @@ public class DatabaseEngine {
                 pstmt.setInt(1, card.getId());
                 pstmt.setString(2, card.getTitle());
                 pstmt.setString(3, card.getDescription());
-                pstmt.setBytes(4,card.getImage());
+                pstmt.setBytes(4, card.getImage());
                 pstmt.setInt(5, accepted.get(Attribute.FOOD));
                 pstmt.setInt(6, accepted.get(Attribute.ECONOMY));
                 pstmt.setInt(7, accepted.get(Attribute.MILITARY));
@@ -100,10 +75,9 @@ public class DatabaseEngine {
             e.printStackTrace();
         }
     }
-
     public void insertTopScore(String nameStr, Integer days) throws SQLException {
 
-        String selectSql = "SELECT score FROM TOPSCORE WHERE name = ?";
+        String selectSql = SQLCommands.getTopSoreByName;
         PreparedStatement selectStmt = conn.prepareStatement(selectSql);
         selectStmt.setString(1, nameStr);
         ResultSet rs = selectStmt.executeQuery();
@@ -112,23 +86,22 @@ public class DatabaseEngine {
             int existingScore = rs.getInt("score");
             if (days > existingScore) {
 
-                String updateSql = "UPDATE TOPSCORE SET score = ? WHERE name = ?";
+                String updateSql = SQLCommands.updateTopScore;
                 PreparedStatement updateStmt = conn.prepareStatement(updateSql);
                 updateStmt.setInt(1, days);
                 updateStmt.setString(2, nameStr);
                 updateStmt.executeUpdate();
             }
         } else {
-            String insertSql = "INSERT INTO TOPSCORE (name, score) VALUES (?, ?)";
+            String insertSql = SQLCommands.insertTopScore;
             PreparedStatement insertStmt = conn.prepareStatement(insertSql);
             insertStmt.setString(1, nameStr);
             insertStmt.setInt(2, days);
             insertStmt.executeUpdate();
         }
     }
-
     public Card getCardById(int cardId) {
-        String query = "SELECT * FROM CARD WHERE id = ?";
+        String query = SQLCommands.getCardById;
         try {
             PreparedStatement pstmt = conn.prepareStatement(query);
 
@@ -151,7 +124,7 @@ public class DatabaseEngine {
                     notAccepted.put(Attribute.MILITARY, rs.getInt("militaryNo"));
                     notAccepted.put(Attribute.RELIGION, rs.getInt("religionNo"));
 
-                    return new Card(id, title, description,image,  accepted, notAccepted);
+                    return new Card(id, title, description, image, accepted, notAccepted);
                 }
             }
         } catch (SQLException e) {
@@ -159,9 +132,8 @@ public class DatabaseEngine {
         }
         return null;
     }
-
     public int getNumberOfCards() {
-        String query = "SELECT MAX(id) AS max_id FROM CARD";
+        String query = SQLCommands.getNumberOfCards;
         int maxId = -1;
         try {
             PreparedStatement pstmt = conn.prepareStatement(query);
@@ -175,7 +147,7 @@ public class DatabaseEngine {
         return maxId;
     }
     public Map<String, Integer> getTopScore() throws SQLException {
-        String sql = "SELECT name, score FROM TOPSCORE ORDER BY score DESC";
+        String sql = SQLCommands.getTopScores;
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
         Map<String, Integer> topScores = new HashMap<>();
