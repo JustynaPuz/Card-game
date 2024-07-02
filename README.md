@@ -11,14 +11,14 @@ Players interact with the game by either accepting or rejecting cards that appea
 ### Graphical User Interface (GUI): Provides an intuitive and visually appealing interface for players to interact with the game.
 
 ## Technical Details
-Attribute Class: An enumeration class containing the kingdom’s attributes.
-Card Class: Represents individual cards with properties such as id, title, description, and image. It includes methods to determine the impact of card decisions.
-CardLoadUtil Class: Responsible for loading card data from a CSV file into the game.
-DatabaseEngine Class: Manages the H2 database, including saving and retrieving card data and player scores.
-Engine Class: The core of the game, handling the game logic, updating kingdom attributes, and managing game sessions.
-ImageUtil Class: Handles image processing, including loading and scaling images.
-Kingdom Class: Creates and manages the state of the kingdom.
-SQLCommands Class: Contains SQL queries for database interactions.
+- Attribute Class: An enumeration class containing the kingdom’s attributes.
+- Card Class: Represents individual cards with properties such as id, title, description, and image. It includes methods to determine the impact of card decisions.
+- CardLoadUtil Class: Responsible for loading card data from a CSV file into the game.
+- DatabaseEngine Class: Manages the H2 database, including saving and retrieving card data and player scores.
+- Engine Class: The core of the game, handling the game logic, updating kingdom attributes, and managing game sessions.
+- ImageUtil Class: Handles image processing, including loading and scaling images.
+- Kingdom Class: Creates and manages the state of the kingdom.
+- SQLCommands Class: Contains SQL queries for database interactions.
 
 ## User Interface
 Start Screen: Allows players to start a new game or view the leaderboard with the best scores.
